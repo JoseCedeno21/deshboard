@@ -1,0 +1,21 @@
+{
+  "name": "ejemplobower",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "JoseCedeno21 <jose.gabriell.21@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "knockout": "^3.4.1"
+  }
+}
