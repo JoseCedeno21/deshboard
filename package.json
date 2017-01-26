@@ -13,5 +13,8 @@
     "jade": "^1.11.0",
     "mysql": "github:felixge/node-mysql",
     "socket.io": "^1.7.2"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0"
   }
 }
