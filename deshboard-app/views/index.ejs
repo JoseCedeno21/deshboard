@@ -3,9 +3,116 @@
   <head>
     <title><%= title %></title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs/dt-1.10.12/datatables.min.css"/>
   </head>
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+  
+      <nav class="navbar navbar-inverse navbar-static-top">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">AdmProyectos</a>
+          </div>
+          <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+              <li ><a href="#">Usuarios</a></li>
+              <li ><a href="#">Proyectos</a></li>
+              <li class="active"><a href="#">Dashboard</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="#about"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></a></li>
+              <li><a href="index.jsp">Logout</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav>
+      <h1>Dashboard de Proyectos</h1>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-1"><h4>Proyecto:</h4></div>
+            <div class="col-md-3"><select class="form-control"></select></div>
+          </div>
+          <div>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalTareas">Agregar tarea</button>
+          </div>
+          <div id="board">
+            <div class="row">
+              <div class="col-md-4">
+
+                <div class="col-md-12"><h3>Inicial</h3></div>
+                <div class="col-md-12">
+                  <ul>
+                    <li></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="col-md-12"><h3>En Desarrollo</h3></div>
+                <div class="col-md-12">
+                  <ul>
+                    <li></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="col-md-12"><h3>Terminado</h3></div>
+                <div class="col-md-12">
+                  <ul>
+                    <li></li>
+                  </ul>
+                </div>
+
+              </div>
+            </div>
+        </div>
+        <!-- Modal Agregar Tarea -->
+        <div class="modal fade" id="modalTareas" tabindex="-1" role="dialog">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <form action="Conferencias" method="post">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                  <h4 class="modal-title">Crear Nueva Tarea</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                      <label>Titulo: </label>
+                      <input type="text" class="form-control" id="inputTitulo" name="Titulo" placeholder="Titulo de la tarea">
+                    </div>
+                    <div class="form-group">
+                        <label>Descripción:</label>
+                        <textarea class="form-control" rows="4" id="comment" name="Descripción" placeholder="Descripcion de la tarea"></textarea>
+                    </div>
+                    <div class="form-group">
+                      <label>Responsable:</label>
+                      <input type="text" class="form-control" id="inputResponsable" name="Responsable" placeholder="Responsable de la tarea">
+                    </div>
+                    <div class="form-group">
+                      <label>Estado:</label>
+                      <select>
+                        <option value="inicial">Inicial</option>
+                        <option value="desarrollo">En Desarrollo</option>
+                        <option value="terminado">Terminado</option>
+                      </select>
+                    </div>
+                    <div class="form-group">
+                    <input type="hidden" class="form-control" id="id" name="id" value="">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                  <button type="submit" class="btn btn-primary">Crear</button>
+                  <input type="hidden"  name="opcion" value="1">
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
   </body>
 </html>
