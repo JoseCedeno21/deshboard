@@ -4,15 +4,13 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-
+var db = require('./config/database'); // llama al archivo de la base de datos
 var index = require('./routes/index');
 var users = require('./routes/users');
 
 var app = express();
-var database =
-  var database =
-    'mongodb://mongo_server:server00@ds133249.mlab.com:33249/mongo_server'
-    // view engine setup
+
+// view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
