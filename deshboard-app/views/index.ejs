@@ -43,70 +43,75 @@
           </div>
           <div id="board">
             <div class="row">
-              <div class="col-md-4">
 
+              <div class="col-md-4">
                 <div class="col-md-12"><h3>Inicial</h3></div>
-                <div class="col-md-12">
+                <div class="col-md-12" id="div1" ondrop="drop(event)" ondragover="allowDrop(event)">
                   <ul>
                     <li></li>
                   </ul>
                 </div>
               </div>
+
               <div class="col-md-4">
                 <div class="col-md-12"><h3>En Desarrollo</h3></div>
-                <div class="col-md-12">
+                <div class="col-md-12" id="div2" ondrop="drop(event)" ondragover="allowDrop(event)">
                   <ul>
                     <li></li>
                   </ul>
                 </div>
               </div>
+
               <div class="col-md-4">
                 <div class="col-md-12"><h3>Terminado</h3></div>
-                <div class="col-md-12">
+                <div class="col-md-12" id="div3" ondrop="drop(event)" ondragover="allowDrop(event)">
                   <ul>
                     <li></li>
                   </ul>
                 </div>
-
-              </div>
+              </div>   
+                         
             </div>
         </div>
+
         <!-- Modal Agregar Tarea -->
         <div class="modal fade" id="modalTareas" tabindex="-1" role="dialog">
           <div class="modal-dialog" role="document">
             <div class="modal-content">
               <form action="" method="post">
                 <div class="modal-header">
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                  <h4 class="modal-title">Crear Nueva Tarea</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title">Crear Nueva Tarea</h4>
                 </div>
                 <div class="modal-body">
                     <div class="form-group">
-                      <label>Titulo: </label>
-                      <input type="text" class="form-control" id="inputTitulo" name="Titulo" placeholder="Titulo de la tarea">
+                        <label>Titulo: </label>
+                        <input type="text" class="form-control" id="inputTitulo" name="Titulo" placeholder="Titulo de la tarea">
                     </div>
                     <div class="form-group">
                         <label>Descripción:</label>
                         <textarea class="form-control" rows="4" id="comment" name="Descripción" placeholder="Descripcion de la tarea"></textarea>
                     </div>
                     <div class="form-group">
-                      <label>Responsable:</label>
-                      <input type="text" class="form-control" id="inputResponsable" name="Responsable" placeholder="Responsable de la tarea">
+                        <label>Responsable:</label>
+                        <input type="text" class="form-control" id="inputResponsable" name="Responsable" placeholder="Responsable de la tarea">
                     </div>
                     <div class="form-group">
-                      <label>Estado:</label>
-                      <select class="form-control" id="state" name="state" disabled>
-    					      				  <option value="initial" selected>Inicial</option>
-    					      				</select>
-                  </div>
+                        <label>Estado:</label>
+                        <select class="form-control" id="state" name="state" disabled>
+    					      			  <option value="initial" selected>Inicial</option>
+    					      		</select>
+                    </div>
                     <div class="form-group">
-                    <input type="hidden" class="form-control" id="id" name="id" value="">
+                        <input type="hidden" class="form-control" id="id" name="id" value="">
                     </div>
                 </div>
                 <div class="modal-footer">
-                  <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-                  <input type="submit" form="task-form" class="btn btn-success" value="Crear" onclick="creartarea();">
-                  <input type="hidden"  name="opcion" value="1">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                    <input type="submit" form="task-form" class="btn btn-success" value="Crear" onclick="creartarea();">
+                    <input type="hidden"  name="opcion" value="1">
                 </div>
               </form>
             </div>
@@ -116,4 +121,6 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
   <script type="text/javascript" src="https://cdn.datatables.net/v/bs/dt-1.10.12/datatables.min.js"></script>
+  <script type="text/javascript" src="/js/scriptDnD.js"></script>
 </html>
+
